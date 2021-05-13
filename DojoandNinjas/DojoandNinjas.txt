@@ -1,0 +1,36 @@
+#Create 3 new Dojos
+INSERT INTO dojos_and_ninjas_schema.dojo (name) VALUE ("Burbank");
+INSERT INTO dojos_and_ninjas_schema.dojo (name) VALUE ("Seattle");
+INSERT INTO dojos_and_ninjas_schema.dojo (name) VALUE ("Orlando");
+
+#Delete the 3 Dojos you just created
+DELETE FROM dojos_and_ninjas_schema.dojo WHERE dojo.id > 0;
+
+#Create 3 more dojos
+INSERT INTO dojos_and_ninjas_schema.dojo (name) VALUE ("Dallas");
+INSERT INTO dojos_and_ninjas_schema.dojo (name) VALUE ("Atlanta");
+INSERT INTO dojos_and_ninjas_schema.dojo (name) VALUE ("Miami");
+
+#Create 3 ninjas that belong to the first dojo
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Sean", "Ruddell", 27, 4);
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Jared", "Ruddell", 32, 4);
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Dennis", "Ruddell", 50, 4);
+
+#Create 3 ninjas that belong to the second dojo
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Jessi", "Messi", 27, 5);
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Jess", "Hess", 32, 5);
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Marvin", "McClout", 50, 5);
+
+#Create 3 ninjas that belong to the third dojo
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Kristi", "Simpson", 40, 6);
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Moe", "Clyde", 19, 6);
+INSERT INTO dojos_and_ninjas_schema.ninjas (first_name, last_name, age, dojos_id) VALUE ("Kevin", "Sprite", 24, 6);
+
+#Retrieve all the ninjas from the first dojo
+SELECT * FROM dojos_and_ninjas_schema.ninjas WHERE dojos_id = 4;
+
+#Retrieve all the ninjas from ther last dojo
+SELECT * FROM dojos_and_ninjas_schema.ninjas WHERE dojos_id = 6;
+
+#Retrieve the last ninja's dojo
+SELECT dojos_id FROM dojos_and_ninjas_schema.ninjas WHERE ninjas.id = 9;
